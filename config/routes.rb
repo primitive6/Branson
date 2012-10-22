@@ -1,7 +1,17 @@
 Branson::Application.routes.draw do
-  get "content_pages/home"
-  get "content_pages/help"
-  get "content_pages/questions"
+  get "users/new"
+
+  root :to => 'content_pages#home'
+
+  match '/content_pages/home', :to => 'content_pages#home'
+  match '/help', to: 'content_pages#help'
+  match '/questions', to: 'content_pages#questions'
+
+  match '/signup', to: 'users#new'
+
+  # get "content_pages/home"
+  # get "content_pages/help"
+  # get "content_pages/questions"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
