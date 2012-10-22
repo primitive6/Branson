@@ -1,2 +1,63 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Signup') %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<%= stylesheet_link_tag 'reset-fonts' %>
+		<%= stylesheet_link_tag 'gt-styles' %>
+	</head>
+	<body>
+		
+		<!-- login form head -->
+		<div class="gt-login-hd">
+			Sign Up
+		</div>
+		
+		<!-- login box -->
+		<div class="gt-login-box">
+			<!-- login form -->
+			<div class="gt-form">
+				<!-- form row -->
+				<%= form_for(@user) do |f| %>
+				  <%= render 'shared/error_messages' %>
+				<div class="gt-form-row">
+					<label class="gt-login-label">Name</label>
+					<%= f.text_field :name, :class => 'gt-form-text' %>
+				</div><!-- /form row -->
+				
+				<!-- form row -->
+				<div class="gt-form-row">
+					<label class="gt-login-label">Email</label>
+					<%= f.text_field :email, :class => 'gt-form-text' %>
+				</div><!-- /form row -->
+
+				<!-- form row -->
+				<div class="gt-form-row">
+					<label class="gt-login-label">Password</label>
+					<%= f.password_field :password, :class => 'gt-form-text' %>
+				</div><!-- /form row -->
+
+				<!-- form row -->
+				<div class="gt-form-row">
+					<label class="gt-login-label">Confirm Password</label>
+					<%= f.password_field :password_confirmation, :class => 'gt-form-text' %>
+				</div><!-- /form row -->
+				
+				<!-- form row -->
+				<div class="gt-form-row">
+					<%= f.submit "Create my account", :class => 'gt-btn-blue-large gt-btn-left' %>
+					<% end %>
+				</div>
+				<!-- /form row -->
+				
+				<p class="gt-forgot-password"></a></p>
+				
+			</div><!-- /login form -->
+		</div><!-- /login box -->
+		
+		
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+<div class="status error">
+        	<!-- <p class="closestatus"><a href="" title="Close">x</a></p> -->
+        	<p><%= image_tag 'icons/icon_error.png', :alt => 'Error' %><span>Whoops!</span> This form contains <%= pluralize(@user.errors.count, "error") %>.</p>
+        </div>
+<ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>

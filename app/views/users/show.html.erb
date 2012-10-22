@@ -1,0 +1,205 @@
+<% provide(:title, @user.name) %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<%= stylesheet_link_tag 'reset-fonts' %>
+		<%= stylesheet_link_tag 'gt-styles' %>
+		
+	</head>
+	<body>
+		<!-- head -->
+		<div class="gt-hd clearfix">
+			<!-- leaf watermark -->
+			<div class="gt-leaf-watermark clearfix">
+			
+			<!-- head top -->
+			<div class="gt-hd-top clearfix">
+			
+				<div class="gt-fixed-wrap clearfix">
+			
+				<!-- logo -->
+				<div class="gt-logo">
+					Propertygate
+				</div>
+				<!-- / logo -->
+				
+				<!-- utility box -->
+				<div class="gt-util-box">
+					<div class="gt-util-box-inner">
+						<p>welcome <strong>sarah</strong> <span class="gt-util-separator">|</span> <a href="">logout</a></p>
+					</div>
+				</div>
+				<!-- / utility box -->
+				
+				</div>
+			
+			</div><!-- /head top -->
+			
+			<!-- navbar -->
+			<div class="gt-navbar clearfix">
+				
+				<div class="gt-fixed-wrap clearfix">
+				
+				<!-- navigation -->
+				<div class="gt-nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="base.html">Base HTML</a></li>
+						<li><a class="gt-active" href="tables.html">Tables</a></li>
+						<li><a href="forms.html">Forms</a></li>
+						<li><a href="text-styles.html">Text Styles</a></li>
+						<li><a href="buttons.html">Buttons</a></li>
+						<li><a href="login.html">Login</a></li>
+					</ul>
+				</div><!-- / navigation -->
+				
+				<!-- search -->
+				<div class="gt-search"><div class="gt-search-inner">
+					<input type="text" class="gt-search-text" value="Search" onfocus="javascript:if(this.value=='Search')this.value='';" onblur="javascript:if(this.value=='')this.value='Search';" />
+				</div></div>
+				
+				</div>
+				
+			</div><!-- /navbar -->			
+		</div><!-- /leaf watermark -->
+		</div>
+		<!-- / head -->
+
+		<!-- body -->
+		<div class="gt-bd gt-cols clearfix">
+
+		<% flash.each do |key, value| %> 
+		 <div class="status success">
+        	<p class="closestatus"><a href="" title="Close">x</a></p>
+        	<p><%= image_tag 'icons/icon_success.png', :alt => 'Success' %><span><%= key %></span> <%= value %></p>
+        </div>
+		 <% end %>
+
+			<!-- main content -->
+			<div class="gt-content">
+
+				<!-- Sidebar Box -->
+				<div class="gt-sidebar-box gt-sidebar-box-blue">
+					<!-- search -->
+					<div class="gt-search"><div class="gt-search-inner">
+						<input type="text" class="gt-search-text" value="Search article archive" onfocus="javascript:if(this.value=='Search article archive')this.value='';" onblur="javascript:if(this.value=='')this.value='Search article archive';" />
+					</div></div><!-- /search -->
+				</div><!-- /Sidebar Box -->
+				
+				<!-- User List Table -->
+				<!-- This table can be used for listing things like users -->
+				<h2 class="gt-table-head">User List</h2>
+				<!-- Content Box -->
+				<div class="gt-content-box">
+					<table border="0" class="gt-table gt-user-table">
+						<tbody>
+							<tr>
+								<td class="gt-avatar"><%= image_tag 'gt/avatar.gif', :alt => 'avatar' %></td>
+								<td>
+									<h4><a href="">John Marker</a></h4>
+									<p>My favorite color is green. I really like trees!</p>
+									
+									<p class="gt-table-edit"><a href="">Edit</a></p>
+								</td>
+								<td>
+									<!-- Categories Sub Table -->
+									<table border="0" class="gt-table-categories">
+										<tr>
+											<th>Networks:</th>
+											<td><a href="">Green Lover</a>, <a href="">Eco Fan</a></td>
+										</tr>
+										<tr>
+											<th>Friends:</th>
+											<td><a href="">Susan</a>, <a href="">Fred</a></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div><!-- /Content Box -->
+
+				
+				
+				<!-- / User List -->
+			</div>
+			<!-- / main content -->
+			
+			<!-- sidebar -->
+			<div class="gt-sidebar">
+				<!-- Sidebar Navigation -->
+				<div class="gt-sidebar-nav gt-sidebar-nav-blue">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="">Add a New Post</a></li>
+						<li><a href="">Edit User Settings</a></li>
+						<li><a href="">View Live Site</a></li>
+					</ul>
+				</div><!-- /Sidebar Navigation -->
+				
+				<!-- Sidebar Box -->
+				<div class="gt-sidebar-box gt-sidebar-box-gray">
+					<!-- search -->
+					<div class="gt-search"><div class="gt-search-inner">
+						<input type="text" class="gt-search-text" value="Find an Article" onfocus="javascript:if(this.value=='Find an Article')this.value='';" onblur="javascript:if(this.value=='')this.value='Find an Article';" />
+					</div></div><!-- /search -->
+				</div><!-- /Sidebar Box -->
+				
+				<!-- Sidebar Navigation -->
+				<div class="gt-sidebar-nav gt-sidebar-nav-gray">
+					<h3>Get Help</h3>
+					<ul>
+						<li><a href="mailto:help@gooeytemplates.com">Email Us</a></li>
+					</ul>
+				</div><!-- /Sidebar Navigation -->
+				
+				<!-- Sidebar Content -->
+				<div class="gt-sidebar-content">
+					<h3>Sidebar Note</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div><!-- /Sidebar Content -->
+				
+				<!-- Sidebar List -->
+				<div class="gt-sidebar-list">
+					<h3>Users List</h3>
+					<ul class="gt-sidebar-list-content">
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">John Marker</a></h4>
+							<p>I love to color pictures!</p>
+						</li>
+						
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">Charlee Watts</a></h4>
+							<p>Eco-friendly is the way to go!</p>
+						</li>
+						
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">Sarah Smith</a></h4>
+							<p>I love to draw...</p>
+						</li>
+					</ul>
+				</div><!-- /Sidebar List -->
+				
+			</div>
+			<!-- / sidebar -->
+			
+		</div>
+		<!-- / body -->
+		
+		<!-- footer -->
+		<div class="gt-footer"><div class="gt-footer-inner">
+			<p>Copyright &copy; 2010 Gooey Templates - <a href="http://www.gooeytemplates.com" target="_blank">GooeyTemplates.com</a></p>
+		</div></div>
+		<!-- /footer -->
+	</body>
+</html>
+
+<%= @user.name %>, <%= @user.email %>
