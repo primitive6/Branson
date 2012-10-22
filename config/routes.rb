@@ -1,5 +1,6 @@
 Branson::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   # get "users/new"
 
   root :to => 'content_pages#home'
