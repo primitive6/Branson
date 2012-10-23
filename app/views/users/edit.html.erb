@@ -73,65 +73,99 @@
 		</div><!-- /leaf watermark -->
 		</div>
 		<!-- / head -->
-
+		
 		<!-- body -->
 		<div class="gt-bd gt-cols clearfix">
+			
+			<!-- main content -->
+			<div class="gt-content">
 
-		<% flash.each do |key, value| %> 
+				<!-- User Settings Form -->
+				<!-- This form can be used for user settings -->
+				<h2 class="gt-form-head">Update your profile</h2>
+				<div class="gt-form gt-content-box">
+				
+					<div class="clearfix">
+						<!-- left column -->
+						<div class="gt-left-col">
+							<!-- form row -->
+							<%= form_for(@user) do |f| %>
+							<%= render 'shared/error_messages' %>
+
+
+							<% flash.each do |key, value| %> 
 		 <div class="status success">
         	<p class="closestatus"><a href="" title="Close">x</a></p>
         	<p><%= image_tag 'icons/icon_success.png', :alt => 'Success' %><span><%= key %></span> <%= value %></p>
         </div>
-		 <% end %>
+		 <% end %>								
 
-			<!-- main content -->
-			<div class="gt-content">
+							<div class="gt-form-row gt-width-66">
+								<label>Name</label>
+								<%= f.text_field :name, :class => 'gt-form-text' %>
+							</div><!-- /form row -->
+							
+							<!-- form row -->
+							<div class="gt-form-row gt-width-66">
+								<label>Email</label>
+								<%= f.text_field :email, :class => 'gt-form-text' %>
+							</div><!-- /form row -->
+							
+							<!-- form row -->
+							<div class="gt-form-row gt-width-66">
+								<label>Password</label>
+								<%= f.password_field :password, :class => 'gt-form-text' %>
+							</div><!-- /form row -->
 
-				
-				
-				<!-- User List Table -->
-				<!-- This table can be used for listing things like users -->
-				<h2 class="gt-table-head">Your Profile</h2>
-				<!-- Content Box -->
-				<div class="gt-content-box">
-					<table border="0" class="gt-table gt-user-table">
-						<tbody>
-							<tr>
-								<td class="gt-avatar"><%= image_tag 'gt/avatar.gif', :alt => 'avatar' %></td>
-								<td>
-									<h4><%= @user.name %></h4>
-									<p>My favorite color is green. I really like trees!</p>
-									
-									<p class="gt-table-edit"><%= link_to 'Edit', edit_user_path(@user) %></p>
-								</td>
-								<td>
-									<!-- Categories Sub Table -->
-									<table border="0" class="gt-table-categories">
-										<tr>
-											<th>Email:</th>
-											<td><%= @user.email %></td>
-										</tr>
-										<tr>
-											<th>Friends:</th>
-											<td><a href="">Susan</a>, <a href="">Fred</a></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div><!-- /Content Box -->
+							<!-- form row -->
+							<div class="gt-form-row gt-width-66">
+								<label>Confirm Password</label>
+								<%= f.password_field :password_confirmation, :class => 'gt-form-text' %>
+							</div><!-- /form row -->
 
+						</div><!-- /left column -->
+						
+						<!-- right column -->
+						<div class="gt-right-col">
+							<!-- form row -->
+							<div class="gt-form-row gt-width-66">
+								<label>Language</label>
+								<label class="gt-form-element-label"><input type="radio" name="gt-sample" class="gt-form-radio" /> English</label>
+								<label class="gt-form-element-label"><input type="radio" name="gt-sample" class="gt-form-radio" /> Spanish</label>
+								<label class="gt-form-element-label"><input type="radio" name="gt-sample" class="gt-form-radio" /> French</label>
+							</div><!-- /form row -->
+							
+							<!-- form row -->
+							<div class="gt-form-row gt-width-66">
+								<label>Dashboard Displays</label>
+								<label class="gt-form-element-label"><input type="checkbox" class="gt-form-checkbox" /> Recent Posts</label>
+								<label class="gt-form-element-label"><input type="checkbox" class="gt-form-checkbox" /> Recent Comments</label>
+								<label class="gt-form-element-label"><input type="checkbox" class="gt-form-checkbox" /> Category List</label>
+							</div><!-- /form row -->
+						</div><!-- /right column -->
+					
+					</div>
+					
+					<!-- form row -->
+					<div class="gt-form-row">
+						<%= f.submit 'Save changes', :class => 'gt-btn-blue-medium' %>
+						<% end %>
+					</div>
+					<!-- /form row -->
+					
+				</div>
+				<!-- /User Settings Form -->
 				
 				
-				<!-- / User List -->
+				
+				
 			</div>
 			<!-- / main content -->
 			
 			<!-- sidebar -->
 			<div class="gt-sidebar">
 				<!-- Sidebar Navigation -->
-				<div class="gt-sidebar-nav gt-sidebar-nav-blue">
+				<div class="gt-sidebar-nav gt-sidebar-nav-gray">
 					<h3>Quick Links</h3>
 					<ul>
 						<li><a href="">Add a New Post</a></li>
@@ -141,30 +175,31 @@
 				</div><!-- /Sidebar Navigation -->
 				
 				<!-- Sidebar Box -->
-				<div class="gt-sidebar-box gt-sidebar-box-gray">
+				<div class="gt-sidebar-box gt-sidebar-box-blue">
 					<!-- search -->
 					<div class="gt-search"><div class="gt-search-inner">
 						<input type="text" class="gt-search-text" value="Find an Article" onfocus="javascript:if(this.value=='Find an Article')this.value='';" onblur="javascript:if(this.value=='')this.value='Find an Article';" />
 					</div></div><!-- /search -->
 				</div><!-- /Sidebar Box -->
 				
-				<!-- Sidebar Navigation -->
-				<div class="gt-sidebar-nav gt-sidebar-nav-gray">
-					<h3>Get Help</h3>
-					<ul>
-						<li><a href="mailto:help@gooeytemplates.com">Email Us</a></li>
-					</ul>
-				</div><!-- /Sidebar Navigation -->
 				
 				<!-- Sidebar Content -->
 				<div class="gt-sidebar-content">
-					<h3>Sidebar Note</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h3>Author Contact</h3>
+					<p>John Marker<br />
+					1756 Main Court<br />
+					City, State 12345, Country</p>
+					
+					<p>email: <a href="">john.marker@example.com</a></p>
+					
+					<p>phone: 123-555-1356</p>
+					
+					<p>aim: johnmarker</p>
 				</div><!-- /Sidebar Content -->
 				
 				<!-- Sidebar List -->
 				<div class="gt-sidebar-list">
-					<h3>Users List</h3>
+					<h3>Recent Users</h3>
 					<ul class="gt-sidebar-list-content">
 						<li class="gt-sidebar-list-row">
 							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
@@ -177,15 +212,8 @@
 							<h4><a href="">Charlee Watts</a></h4>
 							<p>Eco-friendly is the way to go!</p>
 						</li>
-						
-						<li class="gt-sidebar-list-row">
-							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
-							<h4><a href="">Sarah Smith</a></h4>
-							<p>I love to draw...</p>
-						</li>
 					</ul>
 				</div><!-- /Sidebar List -->
-				
 			</div>
 			<!-- / sidebar -->
 			

@@ -10,6 +10,8 @@ Branson::Application.routes.draw do
   match '/questions', to: 'content_pages#questions'
 
   match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # get "content_pages/home"
   # get "content_pages/help"
