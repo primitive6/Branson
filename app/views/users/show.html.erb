@@ -32,7 +32,7 @@
 				<% if signed_in? %>
 				<div class="gt-util-box">
 					<div class="gt-util-box-inner">
-						<p>welcome <strong><%= current_user.name %></strong> <span class="gt-util-separator">|</span> <%= link_to "Sign out", signout_path, method: "delete" %></p>
+						<p>welcome <strong><%= current_user.name %></strong> <span class="gt-util-separator">|</span> <%= link_to "Profile", current_user %><span class="gt-util-separator">|</span> <%= link_to "Sign out", signout_path, method: "delete" %></p>
 					</div>
 				</div>
 <% else %>
@@ -52,7 +52,7 @@
 				<!-- navigation -->
 				<div class="gt-nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><%= link_to "Home", root_path %></li>
 						<li><a href="base.html">Base HTML</a></li>
 						<li><a class="gt-active" href="tables.html">Tables</a></li>
 						<li><a href="forms.html">Forms</a></li>
@@ -121,10 +121,44 @@
 						</tbody>
 					</table>
 				</div><!-- /Content Box -->
-
-				
-				
 				<!-- / User List -->
+
+				<br />
+				
+				<!-- Article List Table -->
+				<!-- This table can be used for listing things like articles, pages or blog entries -->
+				<% if @user.properties.any? %>
+				<h2 class="gt-table-head">Current Articles</h2>
+				<!-- Content Box -->
+				<div class="gt-content-box">
+				
+				<!-- Table Controls -->
+				<div class="gt-table-controls clearfix">
+					<form action="" class="gt-table-picker">
+						<select>
+							<option>Choose Section...</option>
+							<option>Blog</option>
+							<option>Contact</option>
+							<option>About</option>
+						</select>
+					</form>
+					<p class="gt-table-pager"><a class="current" href="">1</a> | <a href="">2</a> | <a href="">3</a> <a href="">&raquo;</a></p>
+				</div><!-- /Table Controls -->
+				<table border="0" class="gt-table gt-user-table">
+					<tbody>
+					
+					<%= render @properties %>
+					
+					</tbody>
+				</table>
+				</div><!-- /Content Box -->
+				<div class="gt-table-buttons">
+					<a href="" class="gt-btn-blue-large">Add New Article</a>
+				</div>
+				<% end %>
+				<!-- / Article Table List -->
+				
+				
 			</div>
 			<!-- / main content -->
 			

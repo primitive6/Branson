@@ -1,0 +1,27 @@
+
+										
+	    <tr>
+		<td>
+  		  <h4><%= property_item.address1 %> <%= property_item.address2 %> </h4>
+    		    <p><%= property_item.city %> <%= property_item.postcode %> <%= property_item.country %><p>							
+    		    <p class="gt-table-action-list"><%= image_tag 'icons/pencil.png' %> Edit <span class="gt-separator">|</span> <%= image_tag 'icons/delete.png' %> <%= link_to 'Remove Property', property_item, confirm: 'Are you sure you wish to remove this propety? This action cannot be unodne.', method: :delete %></a></p></p>
+		</td>
+
+  		<td>
+   		  <!-- Categories Sub Table -->
+      		    <table border="0" class="gt-table-categories">
+        	      <tr>
+                        <th>Registered:</th>
+          		<td><%= property_item.created_at.strftime("%d %B %Y") %></td>
+       		      </tr>
+        	      <tr>
+          		<th>Property Type:</th>
+          		<td><%= property_item.propertytype %></td>
+        	      </tr>
+		      <tr>
+          		<th>Bedrooms/Bathrooms:</th>
+          		<td><%= property_item.numberofbedrooms %>/<%= property_item.numberofbathrooms %></td>
+        	      </tr>
+                    </table>
+  		</td>
+</tr>

@@ -1,18 +1,114 @@
-<!DOCTYPE html>
-<html>
-	<head></head>
-<body>
-	<ul>
-	  <li><%= link_to 'Home', root_path %></li>
-	  <li><%= link_to 'Help', help_path %></li>
-	  <li><%= link_to 'Questions', questions_path %></li>
-	  <li><%= link_to 'Signup', signup_path %></li>
-	</ul>
-</body>
-</html>
+<% if signed_in? %>
+
+<!-- Site header & nav menu -->
+<%= render 'shared/header_signed_in' %>
+<!-- End of site header & nav bar -->
+
+<!-- body -->
+  <div class="gt-bd gt-cols clearfix">
+			
+    <!-- main content -->
+      <div class="gt-content">
+				
+<% flash.each do |key, value| %> 
+		 <div class="status success">
+        	<p class="closestatus"><a href="" title="Close">x</a></p>
+        	<p><%= image_tag 'icons/icon_success.png', :alt => 'Success' %><span><%= key %></span> <%= value %></p>
+        </div>
+		 <% end %>
+
+	<!-- Sidebar Box -->
+	<div class="gt-sidebar-box gt-sidebar-box-blue">
+	  <!-- search -->
+	  <div class="gt-search">
+            <div class="gt-search-inner">
+	      <input type="text" class="gt-search-text" value="Search..." onfocus="javascript:if(this.value=='Search article archive')this.value='';" onblur="javascript:if(this.value=='')this.value='Search article archive';" />
+	    </div>
+	  </div>
+          <!-- /search -->
+	</div>
+	<!-- /Sidebar Box -->  
 
 
-<% provide(:title, 'Home') %>
 
-<h1>ContentPages#home</h1>
-<p>This will be the live home page of Propertygate, available to all viewers.</p>
+<!-- Account Stats Header -->
+<%= render 'shared/stats' %>
+<!-- End of account stats header -->
+
+<!-- User property feed-->
+<%= render 'shared/property_feed' %>
+<!-- End of user property feed -->
+
+</div>
+			<!-- / main content -->
+
+<!-- sidebar -->
+			<div class="gt-sidebar">
+				<!-- Sidebar Navigation -->
+				<div class="gt-sidebar-nav gt-sidebar-nav-blue">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><%= link_to "Add a New Property", new_property_path %></li>
+						<li><a href="">Edit User Settings</a></li>
+						<li><a href="">View Live Site</a></li>
+					</ul>
+				</div><!-- /Sidebar Navigation -->
+				
+				<!-- Sidebar Box -->
+				<div class="gt-sidebar-box gt-sidebar-box-gray">
+					<!-- search -->
+					<div class="gt-search"><div class="gt-search-inner">
+						<input type="text" class="gt-search-text" value="Find an Article" onfocus="javascript:if(this.value=='Find an Article')this.value='';" onblur="javascript:if(this.value=='')this.value='Find an Article';" />
+					</div></div><!-- /search -->
+				</div><!-- /Sidebar Box -->
+				
+				<!-- Sidebar Navigation -->
+				<div class="gt-sidebar-nav gt-sidebar-nav-gray">
+					<h3>Get Help</h3>
+					<ul>
+						<li><a href="mailto:help@gooeytemplates.com">Email Us</a></li>
+					</ul>
+				</div><!-- /Sidebar Navigation -->
+				
+				<!-- Sidebar Content -->
+				<div class="gt-sidebar-content">
+					<h3>Sidebar Note</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div><!-- /Sidebar Content -->
+				
+				<!-- Sidebar List -->
+				<div class="gt-sidebar-list">
+					<h3>Users List</h3>
+					<ul class="gt-sidebar-list-content">
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">John Marker</a></h4>
+							<p>I love to color pictures!</p>
+						</li>
+						
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">Charlee Watts</a></h4>
+							<p>Eco-friendly is the way to go!</p>
+						</li>
+						
+						<li class="gt-sidebar-list-row">
+							<img class="gt-avatar-small" src="images/gt/avatar-small.gif" alt="avatar-small" width="25" height="25"/>
+							<h4><a href="">Sarah Smith</a></h4>
+							<p>I love to draw...</p>
+						</li>
+					</ul>
+				</div><!-- /Sidebar List -->
+				
+			</div>
+			<!-- / sidebar -->
+
+</div><!-- End of body -->
+
+<% else %>
+
+<!-- Header & Content for non signed in user -->
+<%= render 'shared/header_not_signed_in' %>
+<!-- End of header & Content for non signed in user -->
+
+<% end %>

@@ -1,0 +1,40 @@
+<div class="portlet x12">
+  <div class="portlet-content">
+    <div id="big_stats" class="clearfix">
+
+      <div class="stat">			
+        <h4>Registered Properties</h4>
+          <span class="value">
+	    <%= current_user.properties.count %>
+	  </span>
+	  <span class="view_all">
+	  <% if current_user.properties.count == 0 %>
+	    <%= link_to "Add a New Property", new_property_path %>
+	  <% else %>
+	    <%= link_to "View all properties", properties_path %>
+	  </span>
+	  <% end %>
+      </div>
+
+      <div class="stat">				
+	<h4>Completed Sales Today</h4>
+	  <span class="value">
+	    23
+	  </span>
+	  <span class="view_all">
+	    <a href="#">View All Completed Sales</a>
+	  </span>		
+      </div>
+			
+      <div class="stat">						
+        <h4>Returned Items Today</h4>
+	  <span class="value">
+	    2
+	  </span>
+	  <span class="view_all">
+	    <a href="#">View Returned Items</a>
+	  </span>						
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  address1: MyString
+  address2: MyString
+  city: MyString
+  postcode: MyString
+  country: MyString
+  propertytype: MyString
+  emgcontact: 1
+  numberofbedrooms: 1
+  numberofbathrooms: 1
+  squarefootage: 1
+  maxtenantoccupancy: 1
+  desiredmonthlyrent: 9.99
+  user_id: 1
+
+two:
+  address1: MyString
+  address2: MyString
+  city: MyString
+  postcode: MyString
+  country: MyString
+  propertytype: MyString
+  emgcontact: 1
+  numberofbedrooms: 1
+  numberofbathrooms: 1
+  squarefootage: 1
+  maxtenantoccupancy: 1
+  desiredmonthlyrent: 9.99
+  user_id: 1

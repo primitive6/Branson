@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<%= stylesheet_link_tag 'reset-fonts' %>
+		<%= stylesheet_link_tag 'gt-styles' %>
+	</head>
+	<body>
+	<!-- head -->
+	  <div class="gt-hd clearfix">
+	    <!-- leaf watermark -->
+	    <div class="gt-leaf-watermark clearfix">
+			
+	      <!-- head top -->
+	      <div class="gt-hd-top clearfix">
+			
+	      <div class="gt-fixed-wrap clearfix">
+			
+		<!-- logo -->
+		<div class="gt-logo">
+		Propertygate
+		</div>
+		<!-- / logo -->
+				
+		<!-- utility box -->
+		<div class="gt-util-box">
+		  <div class="gt-util-box-inner">
+		  <p>welcome <strong><%= current_user.name %></strong> <span class="gt-util-separator">|</span> <%= link_to "Profile", current_user %><span class="gt-util-separator">|</span> <%= link_to "Sign out", signout_path, method: "delete" %></p>
+		  </div>
+		</div>
+		<!-- / utility box -->
+				
+	      </div>
+	      </div>
+	      <!-- /head top -->
+			
+	      <!-- navbar -->
+	      <div class="gt-navbar clearfix">
+		<div class="gt-fixed-wrap clearfix">
+				
+		  <!-- navigation -->
+		    <div class="gt-nav">
+		      <ul>
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "Properties & Tenants", properties_path %></li>
+			<li><a href="tables.html">Tables</a></li>
+			<li><a href="forms.html">Forms</a></li>
+			<li><a href="text-styles.html">Text Styles</a></li>
+			<li><a href="buttons.html">Buttons</a></li>
+			<li><a href="login.html">Login</a></li>
+		      </ul>
+		    </div>
+		  <!-- / navigation -->
+				
+		  <!-- search -->
+		    <div class="gt-search">
+		      <div class="gt-search-inner">
+			<input type="text" class="gt-search-text" value="Search" onfocus="javascript:if(this.value=='Search')this.value='';" onblur="javascript:if(this.value=='')this.value='Search';" />
+		      </div>
+		    </div>
+		 </div>
+	      </div>
+	      <!-- /navbar -->	
+		
+	    </div>
+	    <!-- /leaf watermark -->
+	  </div>
+	  <!-- / head -->

@@ -1,0 +1,123 @@
+<% if signed_in? %>
+
+<!-- Site header & nav menu -->
+<%= render 'shared/header_signed_in' %>
+<!-- End of site header & nav bar -->
+
+
+<!-- body -->
+		<div class="gt-bd gt-cols clearfix">
+			
+			<!-- main content -->
+			<div class="gt-content">
+
+<%= form_for(@property) do |f| %>
+  <% if @property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% @property.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+        
+        <div class="gt-form gt-content-box">
+          <div class="clearfix">
+            <!-- left column -->
+            <div class="gt-left-col">
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66">
+                <label>Address 1</label>
+                <%= f.text_field :address1, :class => 'gt-form-text' %>
+              </div><!-- /form row -->
+           
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66">
+                <label>Address 2</label>
+                <%= f.text_field :address2, :class => 'gt-form-text' %>
+              </div><!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66">
+                <label>City</label>
+                <%= f.text_field :city, :class => 'gt-form-text' %>
+              </div><!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66">
+                <label>Post Code</label>
+                <%= f.text_field :postcode, :class => 'gt-form-text' %>
+              </div><!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66">
+                <label>Country</label>
+                <%= f.text_field :country, :class => 'gt-form-text' %>
+              </div><!-- /form row -->
+            </div>
+            
+            <!-- right column -->
+            <div class="gt-right-col">
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label>Property Type</label>
+                <%= f.select "propertytype", options_for_select([ "Bunglow", "Terrace", "End of Terrace", "Semi-Detached", "Detached" ]) %>
+              </div>
+              <!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label># of Bedrooms</label>
+                <%= f.select "numberofbedrooms", options_for_select([ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]) %>
+              </div><!-- /form row -->
+            
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label># Bathrooms</label>
+                <%= f.select "numberofbathrooms", options_for_select([ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ]) %>
+              </div>
+              <!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label>Square Footage</label>
+                <%= f.text_field :squarefootage, :class => 'gt-form-text' %>
+              </div>
+              <!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label>Max Tenant Occupancy</label>
+                <%= f.text_field :maxtenantoccupancy, :class => 'gt-form-text' %>
+              </div>
+              <!-- /form row -->
+              
+              <!-- form row -->
+              <div class="gt-form-row gt-width-66 clearfix">
+                <label>Desired Monthly Rent</label>
+                <%= f.text_field :desiredmonthlyrent, :class => 'gt-form-text' %>
+              </div>
+              <!-- /form row -->
+            </div>
+          </div>
+          <!-- form row -->
+          <div class="gt-form-row">
+            <%= f.submit 'Save', :class => 'gt-btn-blue-small gt-btn-left' %>
+            <% end %>
+            <p class="gt-cancel">or <%= link_to 'Back', properties_path %></p>
+          </div>
+          
+          
+          
+      
+
+          <!-- /form row -->
+          
+        </div>
+        <!-- /Add / Edit User Form -->
+      </div>
+      <!-- / main content -->
+<% end %>

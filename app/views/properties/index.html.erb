@@ -1,0 +1,29 @@
+<% if signed_in? %>
+
+<!-- Site header & nav menu -->
+<%= render 'shared/header_signed_in' %>
+<!-- End of site header & nav bar -->
+
+<!-- body -->
+  <div class="gt-bd gt-cols clearfix">
+			
+    <!-- main content -->
+      <div class="gt-content">
+
+<!-- Sidebar Box -->
+	<div class="gt-sidebar-box gt-sidebar-box-blue">
+	  <!-- search -->
+	  <div class="gt-search">
+            <div class="gt-search-inner">
+	      <input type="text" class="gt-search-text" value="Search Properties..." onfocus="javascript:if(this.value=='Search article archive')this.value='';" onblur="javascript:if(this.value=='')this.value='Search article archive';" />
+	    </div>
+	  </div>
+          <!-- /search -->
+	</div>
+	<!-- /Sidebar Box -->  
+
+<!-- User property feed-->
+<%= render 'shared/property_feed' %>
+<!-- End of user property feed -->
+
+<% end %>
